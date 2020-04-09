@@ -20,7 +20,7 @@ public class HibernateDepartment {
 		
 		Session session= sessionFactory.getCurrentSession();
 	
-		Departments department= new Departments("software",200,1700);
+		Departments department= new Departments("software11",200,1700);
 		session.beginTransaction();
 		session.save(department);
 		session.getTransaction().commit();
