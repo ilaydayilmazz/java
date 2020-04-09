@@ -4,11 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-//entity secilecek db den tablo kayitli sorgu gibi view gibi joinlenmis tablolar da olabilir
+
 @Entity
 @Table(name="JOBS")
 public class Jobs {
-//pk i böyle id olarak belirtiyoruz
+//pk id 
 	@Id
 	@Column(name="job_id")
 	private String jobId;

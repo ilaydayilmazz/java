@@ -12,20 +12,25 @@ import javax.persistence.Table;
 @Table(name="DEPARTMENTS")
 public class Departments {
 	
-	@Id
+/*@Id
 	@Column(name="department_id")
 	@SequenceGenerator(name="dept_seq",sequenceName="DEPARTMENTS_SEQ", allocationSize=10)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="dept_seq")
 	private int department_id;
+	*/
+	@Id
+	@Column(name="department_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(name="department_name")
 	private String department_name;
 	
 	@Column(name="manager_id")
-	private int manager_id;
+	private Integer manager_id;
 	
 	@Column(name="location_id")
-	private int location_id;
+	private Integer location_id;
 	
 
 	public Departments( String department_name, int manager_id, int location_id) {
@@ -35,12 +40,21 @@ public class Departments {
 		this.manager_id = manager_id;
 		this.location_id = location_id;
 	}
-	public int getDepartment_id() {
+		
+	public int getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/*public int getDepartment_id() {
 		return department_id;
 	}
 	public void setDepartment_id(int department_id) {
 		this.department_id = department_id;
-	}
+	}*/
 	public String getDepartment_name() {
 		return department_name;
 	}
@@ -50,14 +64,18 @@ public class Departments {
 	public int getManager_id() {
 		return manager_id;
 	}
-	public void setManager_id(int manager_id) {
+	public void setManager_id(Integer manager_id) {
 		this.manager_id = manager_id;
 	}
 	public int getLocation_id() {
 		return location_id;
 	}
-	public void setLocation_id(int location_id) {
+	public void setLocation_id(Integer location_id) {
 		this.location_id = location_id;
+	}
+
+	public Departments() {
+		super();
 	}
 	
 	

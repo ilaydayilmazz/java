@@ -1,5 +1,7 @@
 package com.i.hibernate;
 
+import java.util.List;
+
 import javax.persistence.Column;
 
 import org.hibernate.Session;
@@ -9,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 import com.i.entity.Departments;
 import com.i.entity.Jobs;
 
-public class HibernateDepartment {
+public class HibernateUpdate {
 
 	public static void main(String[] args) {
 		
@@ -19,14 +21,21 @@ public class HibernateDepartment {
 				.buildSessionFactory();
 		
 		Session session= sessionFactory.getCurrentSession();
-	
-		Departments department= new Departments("software11",200,1700);
+		
 		session.beginTransaction();
-		session.save(department);
+	
+	Departments dept= session.get(Departments.class, 20);
+	dept.setDepartment_name("Marketing");
+
 		session.getTransaction().commit();
-		session.close();
 		
 		
+	/*	session.beginTransaction();
+		
+		session.createQuery("update Departments set department_name='PAZARLAMA' where id=20").executeUpdate();
+		
+			session.getTransaction().commit();
+		*/
 	}
 
 }
