@@ -10,7 +10,7 @@ import com.i.entity.Ogretmen;
 import com.i.entity.OgretmenDetay;
 
 
-public class HibernateOneToOne {
+public class HibernateOneToOneBi {
 
 	public static void main(String[] args) {
 		
@@ -21,17 +21,19 @@ public class HibernateOneToOne {
 				.buildSessionFactory();
 		
 		Session session= sessionFactory.getCurrentSession();
-	
-		OgretmenDetay ogrDty = new OgretmenDetay("javla","sinlema","http://google.coml","sdlf");
-		Ogretmen ogr= new Ogretmen(ogrDty,"leylla","lely","ley@glmail.clom");
+		OgretmenDetay od = new OgretmenDetay("su","ssy","http://google.com/asdfy","izy");
+		Ogretmen ogr= new Ogretmen(od,"ilay","zey","lyyy@gmail.com");
 		session.beginTransaction();
-		session.save(ogrDty);
+		OgretmenDetay ogrDty = session.get(OgretmenDetay.class,8);
+
+		session.save(od);
 		session.save(ogr);
 		
 		session.getTransaction().commit();
 		session.close();
 		
-		
+		System.out.println(ogrDty);
+		System.out.println(ogrDty.getOgretmen() );
 	}
 
 }

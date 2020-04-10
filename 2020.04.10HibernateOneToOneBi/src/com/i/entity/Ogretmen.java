@@ -89,6 +89,12 @@ public class Ogretmen {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Ogretmen [id=" + id + ", ogretmenDetay=" + ogretmenDetay.getId() + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + "]";
+	}
 	
 	
 	
