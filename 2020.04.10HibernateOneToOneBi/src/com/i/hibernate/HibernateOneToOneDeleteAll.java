@@ -11,7 +11,7 @@ import com.i.entity.Ogretmen;
 import com.i.entity.OgretmenDetay;
 
 
-public class HibernateOneToOneDelete {
+public class HibernateOneToOneDeleteAll {
 
 	public static void main(String[] args) {
 		
@@ -24,12 +24,11 @@ public class HibernateOneToOneDelete {
 		Session session= sessionFactory.getCurrentSession();
 	
 		session.beginTransaction();
-		Ogretmen ogr= session.get(Ogretmen.class, 7);
-		session.delete(ogr);
-
+		OgretmenDetay ogrDty = session.get(OgretmenDetay.class, 9);
+		session.delete(ogrDty);
 		session.getTransaction().commit();
 		session.close();
-		
+
 		
 	}
 

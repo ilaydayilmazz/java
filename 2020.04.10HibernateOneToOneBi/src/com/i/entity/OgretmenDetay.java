@@ -1,10 +1,12 @@
 package com.i.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -18,6 +20,11 @@ public class OgretmenDetay {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ogretmen_det_seq")
 	private int id;
 	
+	
+	// All delete
+	@OneToOne(mappedBy="ogretmenDetay",cascade = {CascadeType.ALL,CascadeType.REMOVE})
+	//@OneToOne(mappedBy = "ogretmenDetay",cascade = CascadeType.PERSIST)
+	private Ogretmen ogretmen;
 
 	@Column(name="expertise")
 	private String expertise;
@@ -32,6 +39,14 @@ public class OgretmenDetay {
 	private String fbPage;
 
 	
+
+	public Ogretmen getOgretmen() {
+		return ogretmen;
+	}
+
+	public void setOgretmen(Ogretmen ogretmen) {
+		this.ogretmen = ogretmen;
+	}
 
 	public OgretmenDetay() {
 		super();
@@ -83,6 +98,12 @@ public class OgretmenDetay {
 
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	@Override
+	public String toString() {
+		return "OgretmenDetay [id=" + id + ", ogretmen=" + ogretmen.getId() + ", expertise=" + expertise + ", hobby=" + hobby
+				+ ", website=" + website + ", fbPage=" + fbPage + "]";
 	}
 	
 
