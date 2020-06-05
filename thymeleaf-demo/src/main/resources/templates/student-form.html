@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+<body>
+<h1>Form</h1>
+<hr>
+<form action="#" th:action="@{/save}" th:object="${student}" method="POST">
+    <input type="text"  th:field="*{firstName}"/>
+    <input type="text"  th:field="*{lastName}"/>
+    <input type="text"  th:field="*{studentId}"/>
+<input type="submit" value="Kaydet">
+</form>
+
+
+</body>
+</html>
