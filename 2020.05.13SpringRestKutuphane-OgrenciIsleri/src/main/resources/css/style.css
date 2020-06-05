@@ -1,0 +1,68 @@
+table {
+	border-collapse: collapse;
+	border-bottom: 1px solid gray;
+	font-family: Tahoma,Verdana,sans-serif;
+	width: 90%;
+}
+html,body{
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 0px;
+	font-family: Tahoma,Verdana,sans-serif;
+}
+th {
+	border-bottom: 1px solid gray;
+	background: none repeat scroll 0 0 #4276B2;
+	padding: 10px;
+	color: #ffffff 
+}
+tr {
+	border-top: 1px solid gray;
+	text-align: center;
+}
+tr:nth-child(even) {background: #ffffff; color:#400040}
+tr:nth-child(odd) {background: #bbbbbb }
+
+#wrapper {width: 100%; margin-top: 0px; margin-bottom:20px}
+#header {width: 89%; background: #4267B2; margin-top: 0px; padding:15px 0px 15px 15px; color: #FFFFFF}
+#header h2 {width: 100%; margin:auto; color: #FFFFFF;}
+
+.add-button{
+	border: 1px solid #666;
+	border-radius: 5px;
+	padding: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100px;
+	background: #cccccc;
+}
+
+.save-button{
+	border: 1px solid #666;
+	border-radius: 5px;
+	padding: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100px;
+	background: #cccccc;
+}
+
+.update-button{
+	border: 1px solid #666;
+	border-radius: 5px;
+	padding: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 80px;
+	background: #e6e6e6;
+/* 	margin-top: 30px; */
+}
+.delete-button{
+	border: 1px solid #666;
+	border-radius: 5px;
+	padding: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 80px;
+	background: #e6e6e6;
+}
